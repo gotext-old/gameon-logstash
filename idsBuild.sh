@@ -13,10 +13,6 @@ echo Setting up Docker...
 tar xzf dockerneeds.tar ; mv docker ../ ; cd .. ; chmod +x docker ; \
 	export DOCKER_HOST="tcp://$BUILD_DOCKER_HOST:2376" DOCKER_TLS_VERIFY=1 DOCKER_CONFIG=./dockercfg
 
-wget http://$BUILD_DOCKER_HOST:8081/logstashneeds.tar -q
-echo Setting up Logstash...
-tar xzf logstashneeds.tar 
-
 echo Configuring the logstash-forward and collectd with your space information...
 ./client-config.sh $BLUEMIX_USER $BLUEMIX_PASSWORD $BLUEMIX_ORG $BLUEMIX_SPACE
 
