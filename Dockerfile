@@ -7,6 +7,8 @@ ADD http://game-on.org:8081/logstash-mtlumberjack.tgz /opt/
 
 RUN cd /opt ; tar xzf jdk-8u65-x64.tar.gz ; tar xf logstash-mtlumberjack.tgz
 
+COPY ./logstash-forwarder.crt /opt/logstash.pem
+COPY ./logstash-forwarder.key /opt/logstash.key
 COPY ./logstash.conf /opt/logstash/bin/logstash.conf
 COPY ./startup.sh /opt/startup.sh
 
