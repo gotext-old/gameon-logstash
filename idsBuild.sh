@@ -24,4 +24,4 @@ echo Building the docker image...
 ./docker build -t gameon-logstash .
 ./docker stop -t 0 gameon-logstash
 ./docker rm gameon-logstash
-./docker run -d --name gameon-logstash gameon-logstash
+./docker run -d -p 5043:5043 --name gameon-logstash gameon-logstash
