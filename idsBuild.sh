@@ -4,8 +4,8 @@
 # This script is only intended to run in the IBM DevOps Services Pipeline Environment.
 #
 
-#echo Informing slack...
-#curl -X 'POST' --silent --data-binary '{"text":"A new build for the logmet base image has started."}' $WEBHOOK > /dev/null
+echo Informing slack...
+curl -X 'POST' --silent --data-binary '{"text":"A new build for the Logstash server has started."}' $WEBHOOK > /dev/null
 mkdir dockercfg ; cd dockercfg
 echo Downloading Docker requirements..
 wget http://$BUILD_DOCKER_HOST:8081/dockerneeds.tar -q
