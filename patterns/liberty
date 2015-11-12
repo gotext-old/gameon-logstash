@@ -1,0 +1,3 @@
+LIBERTY_DATESTAMP %{DATESTAMP:datestamp} %{TZ:timezone}
+
+LIBERTY \[%{LIBERTY_DATESTAMP:timestamp}\] %{NUMBER:num} %{JAVACLASS:package}\s*%{WORD:something} %{WORD:messageCode}:%{GREEDYDATA:logmessage}
