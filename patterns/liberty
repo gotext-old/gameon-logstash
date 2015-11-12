@@ -1,1 +1,10 @@
-LIBERTY (?m)[%{GREEDYDATA:ts}]%{SPACE}%{WORD:threadid}%{SPACE}id=%{BASE16NUM:id}?%{SPACE}%{NOTSPACE:module}%{SPACE}%{WORD:loglevel}%{SPACE}%{GREEDYDATA:message}
+LIBERTY_DATESTAMP %{DATESTAMP:datestamp} %{TZ:timezone}
+LIBERTY_ID [a-z0-9]*
+
+LIBERTY_SYSTEM_MESSAGE \[%{LIBERTY_DATESTAMP:timestamp}\] %{BASE16NUM:threadId} %{JAVACLASS:loggerPackage}\s*%{WORD:loglevel} %{WORD:messageCode}:%{GREEDYDATA:logmessage}
+
+LIBERTY_HAS_OBJECT_ID \[%{LIBERTY_DATESTAMP:timestamp}\] %{BASE16NUM:threadId} id\=%{BASE16NUM:objectId} %{JAVACLASS:loggerPackage}
+
+LIBERTY_OTHER \[%{LIBERTY_DATESTAMP:timestamp}\] %{BASE16NUM:threadId} %{WORD:classname}
+
+LIBERTY (?:%{LIBERTY_SYSTEM_MESSAGE}|%{LIBERTY_HAS_OBJECT_ID}|%{LIBERTY_OTHER})
