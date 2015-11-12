@@ -1,3 +1,1 @@
-LIBERTY_DATESTAMP %{DATESTAMP:datestamp} %{TZ:timezone}
-
-LIBERTY \[%{LIBERTY_DATESTAMP:timestamp}\] %{NUMBER:num} %{JAVACLASS:package}\s*%{WORD:something} %{WORD:messageCode}:%{GREEDYDATA:logmessage}
+LIBERTY (?m)[%{GREEDYDATA:ts}]%{SPACE}%{WORD:threadid}%{SPACE}id=%{BASE16NUM:id}?%{SPACE}%{NOTSPACE:module}%{SPACE}%{WORD:loglevel}%{SPACE}%{GREEDYDATA:message}
