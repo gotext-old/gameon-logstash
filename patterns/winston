@@ -1,0 +1,1 @@
+WINSTON {\"level\":\"%{WORD:loglevel}\",\"message\":\"%{GREEDYDATA:message}\",\"timestamp\":\"%{TIMESTAMP_ISO8601:timestamp}\"}
