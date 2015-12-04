@@ -24,3 +24,5 @@ sed -i s/ADMIN_PASSWORD/$ADMIN_PASSWORD/g ./Dockerfile
 ./docker stop -t 0 gameon-logstash
 ./docker rm gameon-logstash
 ./docker run -d -p 10.33.40.21:5043:5043 -p 10.33.40.21:514:514/udp -e LOGSTASH_CERT="$LOGSTASH_CERT" -e LOGSTASH_KEY="$LOGSTASH_KEY" --name gameon-logstash gameon-logstash
+
+rm -rf dockercfg
