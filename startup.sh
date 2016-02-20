@@ -9,4 +9,4 @@ echo Starting logstash...
 etcdctl get /logstash/cert > /opt/logstash-forwarder.crt
 etcdctl get /logstash/key > /opt/logstash-forwarder.key
 sleep 0.5
-JAVA_HOME=/opt/jdk1.8.0_66 /opt/logstash/bin/logstash -f /opt/logstash/bin/logstash.conf
+JAVA_HOME=/opt/jdk1.8.0_66 /opt/logstash/bin/logstash -f /opt/logstash/bin/logstash.conf > /dev/null
