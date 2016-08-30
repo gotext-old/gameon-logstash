@@ -15,7 +15,7 @@ cd ..
 wget http://security.ubuntu.com/ubuntu/pool/main/a/apparmor/libapparmor1_2.8.95~2430-0ubuntu5.3_amd64.deb -O libapparmor.deb
 sudo dpkg -i libapparmor.deb
 rm libapparmor.deb
-wget https://get.docker.com/builds/Linux/x86_64/docker-1.12.1 --quiet -O docker
+wget https://get.docker.com/builds/Linux/x86_64/docker-1.12.1.tgz --quiet -O docker
 chmod +x docker
 
 
