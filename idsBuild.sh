@@ -24,6 +24,7 @@ echo Setting configuration to match with your Bluemix Org and Space information 
 ./client-config.sh $BLUEMIX_USER $BLUEMIX_PASSWORD $BLUEMIX_ORG $BLUEMIX_SPACE
 
 echo Building the docker image...
+sed -i s/PLACEHOLDER_DOWNLOAD_PASSWORD/$DOWNLOAD_PASSWORD/g ./startup.sh
 sed -i s/PLACEHOLDER_DOWNLOAD_PASSWORD/$DOWNLOAD_PASSWORD/g ./Dockerfile
 ./docker/docker build -t gameon-logstash .
 ./docker/docker stop -t 0 gameon-logstash
