@@ -9,8 +9,8 @@ mv etcdctl /usr/local/bin/etcdctl
 echo Obtaining dependencies.
 export HOST=$(etcdctl get /proxy/docker-host)
 mkdir -p /opt
-wget --no-check-certificate https://admin:PLACEHOLDER_DOWNLOAD_PASSWORD@${HOST}:8982/jdk-8u66-linux-x64.gz -O /tmp/jdk.gz && tar xvzf /tmp/jdk.gz -C /opt && rm /tmp/jdk.gz
-wget --no-check-certificate https://admin:PLACEHOLDER_DOWNLOAD_PASSWORD@${HOST}:8982/logstash-mtlumberjack.tgz -O /tmp/logstash.gz && tar xvzf /tmp/logstash.gz -C /opt && rm /tmp/logstash.gz
+wget --no-check-certificate https://admin:PLACEHOLDER_DOWNLOAD_PASSWORD@${HOST}:8982/jdk-8u66-linux-x64.gz -O /tmp/jdk.tgz && tar xvzf /tmp/jdk.tgz -C /opt && rm /tmp/jdk.tgz
+wget --no-check-certificate https://admin:PLACEHOLDER_DOWNLOAD_PASSWORD@${HOST}:8982/logstash-mtlumberjack.tgz -O /tmp/logstash.tar && tar xvf /tmp/logstash.tar -C /opt && rm /tmp/logstash.tar
 
 echo Starting logstash...
 etcdctl get /logstash/cert > /opt/logstash-forwarder.crt
