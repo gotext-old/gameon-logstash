@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 MAINTAINER Ozzy (ozzy@ca.ibm.com)
 
-RUN apt-get update && apt-get install -y wget
+RUN apt-get update && apt-get install -y wget netbase
 
 COPY ./logstash.conf /opt/logstash/bin/logstash.conf
 COPY ./patterns/nginx /opt/logstash/patterns/
