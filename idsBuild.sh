@@ -20,9 +20,6 @@ rm libapparmor.deb
 echo Fetching docker image...
 curl https://get.docker.com/builds/Linux/x86_64/docker-1.12.1.tgz | tar xz
 
-echo Setting configuration to match with your Bluemix Org and Space information for Logmet...
-./client-config.sh $BLUEMIX_USER $BLUEMIX_PASSWORD $BLUEMIX_ORG $BLUEMIX_SPACE
-
 echo Building the docker image...
 sed -i s/PLACEHOLDER_DOWNLOAD_PASSWORD/$DOWNLOAD_PASSWORD/g ./startup.sh
 sed -i s/PLACEHOLDER_DOWNLOAD_PASSWORD/$DOWNLOAD_PASSWORD/g ./Dockerfile
